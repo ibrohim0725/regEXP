@@ -130,18 +130,22 @@ console.log(letter.match(/\b[A-Za-z]+\b/g).join(' '));
 // 	•	Shart: Berilgan matndan faqat qavs ichidagi matnni ajratib oling.
 // 	•	Input: "Bu matn (qavs ichida) joylashgan."
 // 	•	Output: "qavs ichida"
-let str6="Bu matn (qavs ichida) joylashgan.";
-console.log(str6.match(/\b\([A-Za-z]\)/));
 
 // 	10.	Masala: Matndagi raqamlarni va belgilarni ajratish
 // 	•	Shart: Berilgan matndan faqat raqamlarni va maxsus belgilarni ajratib ol.
 // 	•	Input: "Salom! 123 @world."
 // 	•	Output: "123 @"
+let hello= "Salom! 123 @world.";
+console.log(hello.match(/[0-9@]/g).join(''));
 
 // 	11.	Masala: IP manzilni tekshirish
 // 	•	Shart: Berilgan matn IP manzili ekanligini tekshiruvchi RegExp yozing (IPv4 formatida: XXX.XXX.XXX.XXX).
 // 	•	Input: "192.168.0.1"
 // 	•	Output: true
+let ipAdress="192.168.0.1";
+let chekipAdress=/^\d{3}.\d{3}.\d{1}.\d{1}$/;
+console.log(chekipAdress.test(ipAdress));
+
 
 // 	12.	Masala: URL formatini tekshirish
 // 	•	Shart: Berilgan matn URL ekanligini tekshiruvchi RegExp yozing.
@@ -158,11 +162,16 @@ console.log(str6.match(/\b\([A-Za-z]\)/));
 // 	•	Shart: Kredit karta raqami to’g’ri formatda ekanligini tekshiruvchi RegExp yozing. Format XXXX-XXXX-XXXX-XXXX bo’lishi kerak.
 // 	•	Input: "1234-5678-9012-3456"
 // 	•	Output: true
+let cardnum="1234-5678-9012-3456";
+let chekCardnum=/^\d{4}-\d{4}-\d{4}-\d{4}$/;
+console.log(chekCardnum.test(cardnum));
 
 // 	3.	Masala: Matndan maxsus belgilarni olib tashlash
 // 	•	Shart: Berilgan matndan barcha maxsus belgilarni olib tashlang.
 // 	•	Input: "Hello, World! @2025"
 // 	•	Output: "Hello World 2025"
+let year="Hello, World! @2025";
+console.log(year.match(/[A-Za-z0-9]/g).join(""));
 
 // 	4.	Masala: HTML teglarini olib tashlash
 // 	•	Shart: Berilgan matndan barcha HTML teglarini olib tashlang.
